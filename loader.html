@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>loader</title></head><body><script>
+(async function(){
+  var files = ['index.html','japan-taste-1.html','international-food.html'];
+  var data = {};
+  try {
+    for (var i=0;i<files.length;i++) {
+      var r = await fetch(files[i]);
+      var b = await r.arrayBuffer();
+      data[files[i]] = b;
+    }
+    if (window.opener) { window.opener.postMessage({type:'kcai-files', files:data}, '*'); }
+    document.body.innerText = 'SENT ' + Object.keys(data).length + ' files';
+  } catch(e) { document.body.innerText = 'ERR ' + e; }
+})();
+</script></body></html>

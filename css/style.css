@@ -1,0 +1,338 @@
+/* KCAI Trading Ltd. - 静态站点基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brand: #c8102e;
+  --brand-dark: #8f0a20;
+  --ink: #1f1f1f;
+  --muted: #5a5a5a;
+  --bg: #ffffff;
+  --bg-soft: #f7f5f2;
+  --line: #e5e2de;
+  --maxw: 1100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: min(100% - 2rem, var(--maxw));
+  margin-inline: auto;
+}
+
+/* ---------- 统一导航 ---------- */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.6rem 0;
+}
+
+.nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-right: auto;
+}
+
+.nav .brand img {
+  height: 40px;
+  width: auto;
+}
+
+.nav .brand:hover {
+  text-decoration: none;
+}
+
+.nav .links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.nav .links a {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav .links a:hover {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.nav .links a.active {
+  color: var(--brand);
+}
+
+/* ---------- 通用区块 ---------- */
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  margin-bottom: 1.8rem;
+}
+
+/* ---------- 首页 Hero ---------- */
+.hero {
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45)), url("../images/872.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 7rem 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  opacity: 0.95;
+}
+
+/* ---------- 卡片网格 ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.card .body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.tag {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.55rem;
+}
+
+/* ---------- 双栏信息 ---------- */
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;
+}
+
+.split h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- 联系表单 ---------- */
+.contact-form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 520px;
+  margin-top: 1.2rem;
+}
+
+.contact-form input {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form .btn {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contact-form .btn:hover {
+  background: var(--brand-dark);
+}
+
+.contact-info {
+  margin-top: 1.8rem;
+  color: var(--muted);
+}
+
+.contact-info strong {
+  color: var(--ink);
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  margin-top: 0.6rem;
+}
+
+.whatsapp-btn:hover {
+  background: #1db958;
+  text-decoration: none;
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  background: var(--ink);
+  color: #cfcfcf;
+  padding: 2.4rem 0 2rem;
+  margin-top: 2rem;
+}
+
+.site-footer .cols {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.site-footer a {
+  color: #cfcfcf;
+}
+
+.site-footer .copyright {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* ---------- 内容页 ---------- */
+.page-hero {
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+  padding: 3.2rem 0;
+}
+
+.page-hero h1 {
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+}
+
+.page-hero p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-top: 0.4rem;
+}
+
+.banner-img {
+  border-radius: 12px;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  margin: 0 auto 1.6rem;
+}
+
+.prose {
+  max-width: 760px;
+}
+
+.prose h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 1.8rem 0 0.6rem;
+}
+
+.prose p {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+  .nav .brand {
+    margin-right: 0;
+    width: 100%;
+  }
+  .hero {
+    padding: 4.5rem 1rem;
+  }
+}
