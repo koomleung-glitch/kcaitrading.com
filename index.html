@@ -90,9 +90,12 @@
       <div class="container">
         <h2 class="section-title">與我們聯絡 / Contact us / お問い合わせ</h2>
         <p class="section-sub">Tell us your idea!</p>
-        <form class="contact-form" action="#" onsubmit="return false;">
+        <form class="contact-form" action="https://formspree.io/f/mpppejgd" method="POST">
           <input type="text" name="name" placeholder="Name" aria-label="Name">
           <input type="email" name="email" placeholder="Email*" required aria-label="Email">
+          <textarea name="message" placeholder="Message" aria-label="Message" rows="4"></textarea>
+          <input type="hidden" name="_subject" value="New enquiry from kcaitrading.com">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <button class="btn" type="submit">Send</button>
         </form>
         <div class="contact-info">
